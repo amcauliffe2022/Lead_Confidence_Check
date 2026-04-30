@@ -1,1 +1,5 @@
-streamlit
+streamlit>=1.47.0
+hubspot-api-client>=12.0.0
+openai
+python-dotenv
+pandas
