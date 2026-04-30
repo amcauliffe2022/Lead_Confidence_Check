@@ -58,11 +58,11 @@ class APIConnections:
                 }}
             ],
             "properties": ["firstname", "lastname", "email"],
-            "limit": 100
+            "limit": 1000
         }}
         
         Always include 'firstname', 'lastname', and 'email' in the "properties" array.
-        The default "limit" should be 100 unless a different amount is specifically requested.
+        The default "limit" should be 1000 unless a different amount is specifically requested.
         Provide ONLY the JSON object.
         """
 
