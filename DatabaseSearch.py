@@ -57,10 +57,12 @@ class APIConnections:
                     ]
                 }}
             ],
-            "properties": ["firstname", "lastname", "email"]
+            "properties": ["firstname", "lastname", "email"],
+            "limit": 100
         }}
         
         Always include 'firstname', 'lastname', and 'email' in the "properties" array.
+        The default "limit" should be 100 unless a different amount is specifically requested.
         Provide ONLY the JSON object.
         """
 
@@ -108,6 +110,10 @@ class APIConnections:
                     mapped_query[mapping[k]] = v
                 else:
                     mapped_query[k] = v
+            
+            # Set a default limit if not provided
+            if "limit" not in mapped_query:
+                mapped_query["limit"] = 100
                     
             search_request = PublicObjectSearchRequest(**mapped_query)
         except Exception as e:
